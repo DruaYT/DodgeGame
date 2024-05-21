@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.TimerLabel = new System.Windows.Forms.Label();
             this.score1Label = new System.Windows.Forms.Label();
             this.score2Label = new System.Windows.Forms.Label();
+            this.WinnerLabel = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GameTimer
             // 
-            this.GameTimer.Enabled = true;
             this.GameTimer.Interval = 20;
             this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
@@ -77,17 +79,44 @@
             this.score2Label.Text = "0";
             this.score2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // WinnerLabel
+            // 
+            this.WinnerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.WinnerLabel.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WinnerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WinnerLabel.Location = new System.Drawing.Point(12, 180);
+            this.WinnerLabel.Name = "WinnerLabel";
+            this.WinnerLabel.Size = new System.Drawing.Size(576, 39);
+            this.WinnerLabel.TabIndex = 3;
+            this.WinnerLabel.Text = "Press [Spacebar] to Play or [Esc] to Quit!";
+            this.WinnerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Title
+            // 
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.Font = new System.Drawing.Font("Showcard Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.White;
+            this.Title.Location = new System.Drawing.Point(16, 64);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(572, 116);
+            this.Title.TabIndex = 4;
+            this.Title.Text = "DEBRIS DODGER";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.Title);
+            this.Controls.Add(this.WinnerLabel);
             this.Controls.Add(this.score2Label);
             this.Controls.Add(this.score1Label);
             this.Controls.Add(this.TimerLabel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -105,6 +134,8 @@
         private System.Windows.Forms.Label TimerLabel;
         private System.Windows.Forms.Label score1Label;
         private System.Windows.Forms.Label score2Label;
+        private System.Windows.Forms.Label WinnerLabel;
+        private System.Windows.Forms.Label Title;
     }
 }
 
